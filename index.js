@@ -2,9 +2,11 @@ const PORT = 8000;
 const axios = require("axios");
 const cheerio = require("cheerio");
 const express = require("express");
-
+const cors = require("cors");
 const app = express();
 const url = `https://www.theguardian.com/uk`;
+
+app.use(cors());
 
 app.get("/", (req, resp) => {
   resp.json("This is my webscraper");
